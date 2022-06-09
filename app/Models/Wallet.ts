@@ -2,7 +2,6 @@ import { DateTime } from 'luxon'
 import { BaseModel, belongsTo, BelongsTo, column, HasMany, hasMany, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
 import Invoice from './Invoice'
-import Balance from './Balance'
 
 export default class Wallet extends BaseModel {
   @column({ isPrimary: true })
