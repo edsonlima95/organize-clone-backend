@@ -15,7 +15,16 @@ jobs:
     steps:
       
       - uses: actions/checkout@v3
+      
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+            node-version: 16.x
 
+      - name: Instala as depedencias
+        run: npm install
+        
       - uses: appleboy/scp-action@master
       - with:
             host: ${{ SSH.HOST }}
