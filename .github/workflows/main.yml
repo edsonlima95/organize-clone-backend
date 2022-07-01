@@ -20,5 +20,7 @@ jobs:
         with:
             node-version: 16.x
             
-      - run: cd ./build
-      - run: npm ci --production
+      - run: |
+            npm install
+            node ace build --production
+            
