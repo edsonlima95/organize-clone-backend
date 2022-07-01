@@ -21,15 +21,3 @@ jobs:
             node-version: 16.x
             
       - run: npm ci --production
-
-      - name: Instala as depedencias
-        run: npm install
-        
-      - uses: appleboy/scp-action@master
-      - with:
-            host: ${{ secrets.SSH.HOST }}
-            username: ${{ secrets.SSH.USER }}
-            port: ${{ secrets.SSH_PORT }}
-            key: ${{ secrets.SSH_KEY }}
-            source: "., !node_modules"
-            target: "test"
