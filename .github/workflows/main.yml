@@ -21,7 +21,6 @@ jobs:
             node-version: 16.x
             
       - run: |
-            npm install
-            cd build                                    
+            npm install                               
             npm ci --production
  
