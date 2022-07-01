@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - uses: actions/checkout@v3
+
+      - uses: appleboy/scp-action@master
+      - with:
+            host: ${{ SSH.HOST }}
+            username: ${{ SSH.USER }}
+            port: ${{ SSH_PORT }}
+            key: ${{ SSH_KEY }}
+            source: "., !node_modules"
+            target: "test"
