@@ -27,7 +27,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
                 cd organize-clone-backend
+                git pull
                 npm install
-                cd build
-                npm ci --production
-            
+                cp .env.example /build/.env
