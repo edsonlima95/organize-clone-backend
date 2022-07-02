@@ -30,4 +30,4 @@ jobs:
                 npm install
                 cd build
                 npm ci --production
-                pm2 restart ecosystem.config.js
+            
