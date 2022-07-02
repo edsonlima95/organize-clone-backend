@@ -7,3 +7,8 @@ Route.get("/teste", ({response}:HttpContextContract)=>{
     
     return response.json("success") 
 })
+
+Route.get("/teste2", ({response}:HttpContextContract)=>{
+    
+    return response.json("success2") 
+})
