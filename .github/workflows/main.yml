@@ -26,6 +26,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-                cd build
-                npm ci --production
-                pm2 restart ecosystem.config.js
+                cd organize-clone-backend
+                git pull
+                npm install
+                node ace build --production
+                cp .env.example build/.env
